@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<h4> We are in the <i>{{page}}</i> page</h4>
+
+{% if number > 10 %}
+<p>{{number}} is greater than 10</p>
+
+{% elif number == 10 %}
+<p>Number is 10</p>
+
+{% else %}
+<p>{{number}} is less than 10</p>
+{% endif %}
+
+<hr>
+<h1>Projects</h1>
+<ul>
+    {% for project in projects%}
+        <li>Name:{{project.title}} --- {{project.description}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
