@@ -1,6 +1,9 @@
 {% extends 'main.html' %}
 {% block content %}
 <h1>{{project.title}}</h1>
+{% for tag in project.tags.all %}
+<span style="border: 1px solid darkslategrey"> {{tag}}</span>
+{% endfor %}
 <br>
 <h1>{{project.description}}</h1>
 <button><a href="/"> Menu</a></button>
