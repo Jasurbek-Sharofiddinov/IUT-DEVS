@@ -1,0 +1,11 @@
+{% extends main.html %}
+{% block content %}
+<form action="">
+    <p>Are you sure to delete "{{object}}"</p>
+    <a href="{% url 'project' %}">
+        <button>Menu</button>
+    </a>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}
