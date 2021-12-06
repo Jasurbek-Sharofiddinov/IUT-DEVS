@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% block content %}
+<img src="{{ project.featured_image.url }}">
 <h1>{{project.title}}</h1>
 {% for tag in project.tags.all %}
 <span style="border: 1px solid darkslategrey"> {{tag}}</span>
