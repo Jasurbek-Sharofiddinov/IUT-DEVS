@@ -30,7 +30,7 @@
           {% for profile in profiles %}
           <div class="column card">
             <div class="dev">
-              <a href="" class="card__body">
+              <a href="{% url 'user-profile' profile.id   %}" class="card__body">
                 <div class="dev__profile">
                   <img class="avatar avatar--md" src="{{ profile.profile_image.url}}" alt="image" />
                   <div class="dev__meta">
@@ -38,30 +38,14 @@
                     <h5>{{profile.short_intro}}</h5>
                   </div>
                 </div>
-                <p class="dev__info">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, ducimus inventore! Sunt,
-                  veniam veritatis? Veritatis placeat, deleniti iure tempore veniam perspiciatis, soluta cupiditate
-                  animi, exercitationem molestias nam doloremque architecto odit.
-                </p>
+                <p class="dev__info">{{profile.bio}}</p>
                 <div class="dev__skills">
+                  {% for skill in profile.skill_set.all %}
                   <span class="tag tag--pill tag--main">
-                    <small>JavaScript</small>
+                    <small>{{skill}}</small>
                   </span>
-                  <span class="tag tag--pill tag--main">
-                    <small>React</small>
-                  </span>
-                  <span class="tag tag--pill tag--main">
-                    <small>SCSS</small>
-                  </span>
-                  <span class="tag tag--pill tag--main">
-                    <small>Nodejs</small>
-                  </span>
-                  <span class="tag tag--pill tag--main">
-                    <small>Express</small>
-                  </span>
-                  <span class="tag tag--pill tag--main">
-                    <small>GraphQL</small>
-                  </span>
+                  {% endfor %}
+
                 </div>
               </a>
             </div>
