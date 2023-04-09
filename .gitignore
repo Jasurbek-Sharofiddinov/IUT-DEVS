@@ -1,0 +1,8 @@
+
+env
+static
+media
+.idea
+*.pyc
+conf
+.vscode
